@@ -1,0 +1,31 @@
+Licencia de Código Privado / Propietario
+
+Copyright (c) 2025 Sara Montagud Rodríguez
+Todos los derechos reservados.
+
+AVISO DE LICENCIA
+
+Este software y su código fuente son propiedad privada y confidencial de Sara Montagud Rodríguez.
+
+Queda estrictamente prohibido:
+
+Usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar o vender
+cualquier parte de este software sin autorización expresa y por escrito del autor.
+
+Compartir el código fuente, total o parcialmente, en repositorios públicos o privados no autorizados.
+
+Utilizar este software con fines comerciales, educativos o personales sin permiso explícito.
+
+USO PERMITIDO
+
+El uso de este software está permitido únicamente a las personas o entidades que hayan recibido autorización expresa del autor.
+
+AUSENCIA DE GARANTÍA
+
+Este software se proporciona “TAL CUAL”, sin garantía de ningún tipo, expresa o implícita, incluyendo pero no limitado a garantías de comerciabilidad, idoneidad para un propósito particular o no infracción.
+
+En ningún caso el autor será responsable de daños, pérdidas o reclamaciones derivadas del uso o imposibilidad de uso del software.
+
+TERMINACIÓN
+
+Cualquier incumplimiento de los términos de esta licencia resultará en la revocación inmediata de los derechos concedidos

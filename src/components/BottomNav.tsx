@@ -7,13 +7,17 @@ type IndicatorStyle = {
   width: number;
 };
 
+type BottomNavProps = {
+  isHidden?: boolean;
+};
+
 type NavItem = {
   to: string;
   icon: ReactNode;
   label: string;
 };
 
-export const BottomNav = () => {
+export const BottomNav = ({ isHidden = false }: BottomNavProps) => {
   const location = useLocation();
   const [indicatorStyle, setIndicatorStyle] = useState<IndicatorStyle>({
     left: 0,
@@ -87,7 +91,9 @@ export const BottomNav = () => {
   return (
     <nav
       ref={navRef}
-      className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] z-50"
+      className={`fixed ${
+        isHidden ? "translate-y-full" : "translate-y-0"
+      } bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] z-50`}
       role="navigation"
       aria-label="Navegación principal"
     >
