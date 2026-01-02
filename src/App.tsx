@@ -7,6 +7,7 @@ import { Tules } from './pages/Tules';
 import { Theory } from './pages/Theory';
 import { Account } from './pages/Account';
 import { MainLayout } from './pages/MainLayout';
+import { InstallPWA } from './components/InstallPWA';
 
 function App() {
   const [isLogged, setIsLogged] = useState(() => {
@@ -27,11 +28,7 @@ function App() {
     localStorage.removeItem('isLogged');
   };
 
-  if (!isLogged) {
-    return <Login onLoginSuccess={handleLoginSuccess} />;
-  }
-
-  return (
+  const appContent = isLogged ? (
     <BrowserRouter>
       <Routes>
         <Route element={<MainLayout onLogout={handleLogout} />}>
@@ -42,6 +39,15 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+  ) : (
+    <Login onLoginSuccess={handleLoginSuccess} />
+  );
+
+  return (
+    <>
+      <InstallPWA />
+      {appContent}
+    </>
   );
 }
 
