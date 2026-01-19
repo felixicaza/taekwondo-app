@@ -29,7 +29,7 @@ export const Login = ({ onLoginSuccess }: LoginProps) => {
   };
 
   return (
-    <section className="font-manrope w-screen flex item-center justify-center h-screen min-h-dvh bg-[url('/imgs/bg-login.webp')] bg-no-repeat bg-size-[150%] bg-position-[calc(50%+30px)_center]">
+    <section className="font-manrope w-full flex item-center justify-center h-dvh bg-[url('/imgs/bg-login.webp')] bg-no-repeat bg-size-[150%] bg-position-[calc(50%+30px)_center]">
       <div className="flex items-center justify-center w-full h-full">
         <form
           onSubmit={(e) => {
@@ -73,7 +73,7 @@ export const Login = ({ onLoginSuccess }: LoginProps) => {
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute text-gray-500 -translate-y-1/2 right-3 top-1/2 hover:text-gray-700 focus:outline-none"
+              className="absolute text-gray-500 -translate-y-1/2 right-3 top-1/2 active:text-gray-700 focus:outline-none"
               aria-label={
                 showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'
               }
@@ -81,7 +81,7 @@ export const Login = ({ onLoginSuccess }: LoginProps) => {
               {showPassword ? <Eye size={16} /> : <EyeOff size={16} />}
             </button>
           </label>
-          <Button handleClick={signIn} type="submit" disabled={!isFormValid}>
+          <Button onClick={signIn} type="submit" disabled={!isFormValid}>
             Iniciar sesión
           </Button>
           <footer>
