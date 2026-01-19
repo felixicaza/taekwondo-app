@@ -1,23 +1,15 @@
-import { useState } from 'react';
 import { Button } from '../common/Button';
 import { tuls } from '../consts/tuls';
-import { TulVideo } from '../components/TulVideo';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export const TulManagement = () => {
-  const [watchingTul, setWatchingTul] = useState<boolean>(false);
+  const params = useParams();
+  const navigate = useNavigate();
 
-  const currentUrl = window.location.href;
-
-  const selectedTul = tuls.find(
-    (tul) => tul.id === currentUrl.split('/').at(-1)
-  );
+  const selectedTul = tuls.find((tul) => tul.id === params.tulId);
 
   if (!selectedTul) {
     return <div>Tul no encontrado</div>;
-  }
-
-  if (watchingTul) {
-    return <TulVideo selectedTul={selectedTul} />;
   }
 
   return (
@@ -34,8 +26,8 @@ export const TulManagement = () => {
         <img src={selectedTul.diagram} alt="Diagrama del tul" />
       </div>
       <Button
-        handleClick={() => {
-          setWatchingTul(true);
+        onClick={() => {
+          navigate(`/tules/${params.tulId}/video`);
         }}
       >
         Ver forma

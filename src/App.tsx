@@ -9,6 +9,7 @@ import { Account } from './pages/Account';
 import { MainLayout } from './pages/MainLayout';
 import { InstallPWA } from './components/InstallPWA';
 import { TulManagement } from './pages/TulManagement';
+import { TulVideo } from './pages/TulVideo';
 
 function App() {
   const [isLogged, setIsLogged] = useState(() => {
@@ -34,8 +35,11 @@ function App() {
       <Routes>
         <Route element={<MainLayout onLogout={handleLogout} />}>
           <Route path="/" element={<Exams />} />
-          <Route path="/tul/:tulId" element={<TulManagement />} />
-          <Route path="/tules" element={<Tules />} />
+          <Route path="/tules">
+            <Route index element={<Tules />} />
+            <Route path=":tulId" element={<TulManagement />} />
+            <Route path=":tulId/video" element={<TulVideo />} />
+          </Route>
           <Route path="/theory" element={<Theory />} />
           <Route path="/account" element={<Account />} />
         </Route>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { tuls, Tul } from '../consts/tuls';
+import { tuls, type Tul } from '../consts/tuls';
 
 export const Tules = () => {
   return (
@@ -17,7 +17,7 @@ export const Tules = () => {
 const TulCard = ({ tul }: { tul: Tul }) => {
   return (
     <Link
-      to={`/tul/${tul.id}`}
+      to={`/tules/${tul.id}`}
       className="flex flex-col gap-4 pb-4 bg-white rounded-b-md"
     >
       <img src="/imgs/Rectangle.png" alt="Tul" />

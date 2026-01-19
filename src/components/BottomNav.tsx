@@ -1,14 +1,11 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { useRef, useEffect, useState, type ReactNode } from 'react';
 import { BookOpenCheck, BookText, UserRound } from 'lucide-react';
+import TulesIcon from '@/assets/tules.svg?react';
 
 type IndicatorStyle = {
   left: number;
   width: number;
-};
-
-type BottomNavProps = {
-  isHidden?: boolean;
 };
 
 type NavItem = {
@@ -17,7 +14,7 @@ type NavItem = {
   label: string;
 };
 
-export const BottomNav = ({ isHidden = false }: BottomNavProps) => {
+export const BottomNav = () => {
   const location = useLocation();
   const [indicatorStyle, setIndicatorStyle] = useState<IndicatorStyle>({
     left: 0,
@@ -35,9 +32,7 @@ export const BottomNav = ({ isHidden = false }: BottomNavProps) => {
     },
     {
       to: '/tules',
-      icon: (
-        <img src="/svgs/Formas.svg" width={24} height={24} alt="Tules Icon" />
-      ),
+      icon: <TulesIcon />,
       label: 'Formas',
     },
     {
@@ -77,9 +72,7 @@ export const BottomNav = ({ isHidden = false }: BottomNavProps) => {
   return (
     <nav
       ref={navRef}
-      className={`fixed ${
-        isHidden ? 'translate-y-full' : 'translate-y-0'
-      } bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] z-50 safe-area-bottom`}
+      className="sticky bottom-0 inset-x-0 bg-white border-t border-gray-200 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] z-40 safe-area-bottom landscape:hidden"
       aria-label="Navegación principal"
     >
       <div
@@ -92,7 +85,10 @@ export const BottomNav = ({ isHidden = false }: BottomNavProps) => {
 
       <ul className="flex items-center h-16 max-w-2xl gap-4 p-0 m-0 mx-auto list-none">
         {navItems.map((item) => {
-          const isActive = location.pathname === item.to;
+          const isActive =
+            item.to === '/'
+              ? location.pathname === item.to
+              : location.pathname.startsWith(item.to);
 
           return (
             <li
@@ -107,14 +103,14 @@ export const BottomNav = ({ isHidden = false }: BottomNavProps) => {
                 className={`
                   flex flex-col items-center justify-center gap-1 w-full py-2 
                   rounded-lg transition-colors duration-200
-                  hover:bg-gray-100 focus:outline-none focus-visible:ring-2 
+                  active:bg-gray-100 focus:outline-none focus-visible:ring-2 
                   focus-visible:ring-primary-500 focus-visible:ring-offset-2
-                  ${isActive ? 'text-primary-500' : '#191919'}
+                  ${isActive ? 'text-primary-500' : 'text-[#191919]'}
                 `}
                 aria-label={item.label}
                 aria-current={isActive ? 'page' : undefined}
               >
-                <span className="flex items-center justify-center w-6 h-6">
+                <span className="flex items-center justify-center size-6">
                   {item.icon}
                 </span>
                 <span className="leading-none font-lg text-md">
