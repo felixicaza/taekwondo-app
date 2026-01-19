@@ -1,5 +1,5 @@
 import { ChevronRight } from 'lucide-react';
-import { Exam, exams } from '../consts/exams';
+import { type Exam, exams } from '../consts/exams';
 
 export const Exams = () => {
   return (
