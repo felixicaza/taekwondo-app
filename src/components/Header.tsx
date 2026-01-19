@@ -13,7 +13,7 @@ export const Header = ({ onMenuToggle }: HeaderProps) => {
 
       <button
         onClick={onMenuToggle}
-        className="transition-colors duration-200 rounded-lg hover:bg-gray-100"
+        className="transition-colors duration-200 rounded-lg active:bg-gray-100"
         aria-label="Abrir menú"
       >
         <Menu className="w-6 h-6" />

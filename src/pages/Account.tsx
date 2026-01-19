@@ -62,7 +62,7 @@ export const Account = () => {
           <button
             type="button"
             onClick={handleAvatarClick}
-            className="relative flex items-center justify-center w-32 h-32 overflow-hidden transition-colors bg-gray-200 border-4 border-gray-300 rounded-full hover:border-primary-500"
+            className="relative flex items-center justify-center w-32 h-32 overflow-hidden transition-colors bg-gray-200 border-4 border-gray-300 rounded-full active:border-primary-500"
             aria-label="Cambiar foto de perfil"
           >
             {profileData.avatar ? (

@@ -41,14 +41,14 @@ export const InstallPWA = () => {
         <div className="mt-4 flex gap-3 flex-wrap">
           <button
             type="button"
-            className="flex-1 rounded-md bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors whitespace-nowrap cursor-pointer"
+            className="flex-1 rounded-md bg-blue-600 px-3 py-2 text-sm font-medium text-white active:bg-blue-700 transition-colors whitespace-nowrap cursor-pointer"
             onClick={handleInstall}
           >
             Instalar
           </button>
           <button
             type="button"
-            className="flex-1 rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors whitespace-nowrap cursor-pointer"
+            className="flex-1 rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 active:bg-gray-50 transition-colors whitespace-nowrap cursor-pointer"
             onClick={handleClose}
           >
             Más tarde
