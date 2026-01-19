@@ -3,11 +3,14 @@ import react from "@vitejs/plugin-react-swc";
 import tailwindcss from "@tailwindcss/vite";
 import { VitePWA } from "vite-plugin-pwa";
 import { createAppleSplashScreens, minimal2023Preset } from '@vite-pwa/assets-generator/config';
+import svgr from "vite-plugin-svgr";
+import path from "path";
 
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    svgr(),
     VitePWA({
       registerType: "autoUpdate",
       includeAssets: ["favicon.svg"],
@@ -50,4 +53,9 @@ export default defineConfig({
       },
     }),
   ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
 });
