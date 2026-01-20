@@ -16,10 +16,10 @@ export const Exams = () => {
 
 const ExamCard = ({ exam }: { exam: Exam }) => {
   return (
-    <div className="flex items-center justify-between px-4 py-6 bg-white rounded-full shadow-xs">
+    <div className="flex items-center justify-between px-4 py-3 bg-white rounded-full shadow-xs">
       <div className="flex items-center gap-3">
-        <img src={exam.img} alt={exam.range} width={80} />
-        <h2 className="font-semibold text-gray-800">{exam.range}</h2>
+        <img src={exam.img} alt={exam.range} width={50} />
+        <h2 className="font-semibold text-[14px] text-gray-800">{exam.range}</h2>
       </div>
       <ChevronRight color="#191919" size={20} />
     </div>
