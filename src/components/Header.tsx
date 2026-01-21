@@ -6,17 +6,18 @@ interface HeaderProps {
 
 export const Header = ({ onMenuToggle }: HeaderProps) => {
   return (
-    <header className="relative z-40 flex items-center justify-between flex-none mx-6 my-4 safe-area-top">
+    <header className="relative z-40 flex items-center justify-between flex-none my-4 safe-area-top">
       <a href="/">
-        <img src="/imgs/logo.webp" width={80} alt="Logo de la escuela RAM" />
+        <img src="/imgs/logo.webp" width={64} alt="Logo de la escuela RAM" />
       </a>
 
       <button
+        type='button'
         onClick={onMenuToggle}
-        className="transition-colors duration-200 rounded-lg active:bg-gray-100"
+        className="transition-colors rounded-lg duration-2F00 active:bg-gray-100"
         aria-label="Abrir menú"
       >
-        <Menu className="w-6 h-6" />
+        <Menu width={20} height={20} />
       </button>
     </header>
   );

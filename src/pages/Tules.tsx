@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { tuls, type Tul } from '../consts/tuls';
-import { useProgress, TulStatus } from '../context/ProgressContext';
+import { useProgress, type TulStatus } from '../context/ProgressContext';
 import { Check, Clock, Circle, Search, X } from 'lucide-react';
 
 export const Tules = () => {
@@ -34,7 +34,7 @@ export const Tules = () => {
         </div>
         <div className="w-full h-3 overflow-hidden bg-gray-200 rounded-full">
           <div 
-            className="h-full transition-all duration-500 rounded-full bg-gradient-to-r from-primary-500 to-red-400"
+            className="h-full transition-all duration-500 rounded-full bg-linear-to-r from-primary-500 to-red-400"
             style={{ width: `${getProgressPercentage()}%` }}
           />
         </div>
@@ -45,18 +45,19 @@ export const Tules = () => {
         
         {/* Buscador */}
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+          <Search width={16} height={16} className="absolute text-gray-400 -translate-y-1/2 left-3 top-1/2" />
           <input
             type="text"
             placeholder="Buscar por nombre, coreano, movimientos..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full h-12 pl-10 pr-10 text-gray-900 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            className="w-full h-12 pr-10 text-gray-900 bg-white border border-gray-300 rounded-lg pl-9 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
           />
           {searchQuery && (
             <button
+              type='button'
               onClick={() => setSearchQuery('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              className="absolute text-gray-400 -translate-y-1/2 right-3 top-1/2 hover:text-gray-600"
               aria-label="Limpiar búsqueda"
             >
               <X className="w-5 h-5" />

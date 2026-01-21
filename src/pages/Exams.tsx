@@ -40,7 +40,7 @@ export const Exams = () => {
       </div>
 
       <h1 className="text-xl">Selecciona tu examen</h1>
-      <div className="space-y-4">
+      <div className="space-y-2">
         {exams.map((exam) => (
           <ExamCard key={exam.id} exam={exam} />
         ))}
@@ -53,7 +53,7 @@ const ExamCard = ({ exam }: { exam: Exam }) => {
   return (
     <Link
       to={`/exam/${exam.id}`}
-      className="flex items-center justify-between px-4 py-6 transition-shadow bg-white rounded-full shadow-xs hover:shadow-md"
+      className="flex items-center justify-between px-3 py-5 transition-shadow bg-white rounded-full shadow-xs hover:shadow-md"
     >
       <div className="flex items-center gap-3">
         <img src={exam.img} alt={exam.range} width={50} />

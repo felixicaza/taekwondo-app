@@ -57,8 +57,8 @@ export const BottomNav = () => {
         const navRect = nav.getBoundingClientRect();
 
         setIndicatorStyle({
-          left: buttonRect.left - navRect.left + buttonRect.width / 2 - 16,
-          width: 32,
+          left: buttonRect.left - navRect.left + buttonRect.width / 2 - 24,
+          width: 48,
         });
       }
     };
@@ -83,7 +83,7 @@ export const BottomNav = () => {
         }}
       />
 
-      <ul className="flex items-center h-16 max-w-2xl gap-4 p-0 m-0 mx-auto list-none">
+      <ul className="flex items-center h-16 max-w-2xl gap-4 p-0 mx-4 list-none">
         {navItems.map((item) => {
           const isActive =
             item.to === '/'
@@ -110,10 +110,10 @@ export const BottomNav = () => {
                 aria-label={item.label}
                 aria-current={isActive ? 'page' : undefined}
               >
-                <span className="flex items-center justify-center size-6">
+                <span className="flex items-center justify-center size-5">
                   {item.icon}
                 </span>
-                <span className="leading-none font-lg text-md">
+                <span className="text-sm leading-none font-lg">
                   {item.label}
                 </span>
               </NavLink>
