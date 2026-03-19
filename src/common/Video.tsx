@@ -232,22 +232,20 @@ function GoToMovementButton({
 
   const goToMovement = useCallback(() => {
     let newMovementIndex;
+    const movements = tul.movementTimestamps.length;
     const currentMovement = getMovementIndex(
       tul.movementTimestamps,
       currentTime
     );
 
     if (direction === 'next') {
-      newMovementIndex = Math.min(
-        currentMovement + 1,
-        tul.movementTimestamps.length - 1
-      );
+      newMovementIndex = (currentMovement + 1) % movements;
     } else {
       const currentMovementTime = tul.movementTimestamps[currentMovement];
       const repeatMovement = currentTime - currentMovementTime >= 1;
       newMovementIndex = repeatMovement
         ? currentMovement
-        : Math.max(currentMovement - 1, 0);
+        : (currentMovement - 1 + movements) % movements;
     }
 
     const newTime = tul.movementTimestamps[newMovementIndex];
