@@ -634,7 +634,6 @@ const LANDSCAPE_BUTTON_CLASSNAME =
 export function Player(props: PlayerProps) {
   const [controlsVisible, setControlsVisible] = useState(true);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const lastSeekTimeRef = useRef<number>(0);
 
   return (
     <PlayerProvider
@@ -644,7 +643,6 @@ export function Player(props: PlayerProps) {
         onControlsVisibleChange: setControlsVisible,
         currentVideoIndex,
         onCurrentVideoIndexChange: setCurrentVideoIndex,
-        lastSeekTimeRef,
       }}
     >
       <PlayerContainer className="flex flex-col gap-4 h-full portrait:-mx-4 landscape:absolute landscape:inset-0 landscape:bg-black landscape:z-50">
