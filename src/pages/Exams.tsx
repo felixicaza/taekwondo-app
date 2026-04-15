@@ -93,8 +93,10 @@ function ExamCard({
             Actual
           </div>
         )}
-        <h2 className="text-sm text-gray-800">Nivel {exam.range}</h2>
-        <strong>Cinturón {belt?.label}</strong>
+        <span className="font-medium text-sm text-gray-700">
+          Nivel {exam.range}
+        </span>
+        <h2 className="font-manrope font-black">Cinturón {belt?.label}</h2>
       </div>
       {isActive && <ChevronRight color="#191919" size={28} />}
     </Link>
