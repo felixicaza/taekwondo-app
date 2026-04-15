@@ -22,7 +22,7 @@ export function BeltIcon({
       className={cn('drop-shadow-[0_2px_0_#000]', className)}
       {...props}
     >
-      <g clip-path={`url(#belt_clip_${id})`}>
+      <g clipPath={`url(#belt_clip_${id})`}>
         <path
           fill={belt.color}
           d="M7.464 4.065a4 4 0 0 1 5.444-1.536l33.955 19.005a4 4 0 0 1 1.537 5.444l-2.424 4.33a4 4 0 0 1-5.444 1.537L6.577 13.84A4 4 0 0 1 5.04 8.396z"

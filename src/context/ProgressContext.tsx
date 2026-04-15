@@ -13,7 +13,7 @@ type TulProgress = Record<string, TulStatus>;
 
 type ProgressContextType = {
   currentExam: string;
-  setCurrentExam: (belt: string) => void;
+  setCurrentExam: (exam: string) => void;
   tulProgress: TulProgress;
   setTulStatus: (tulId: string, status: TulStatus) => void;
   getTulStatus: (tulId: string) => TulStatus;
