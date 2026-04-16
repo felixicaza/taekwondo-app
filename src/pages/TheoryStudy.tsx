@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 import {
   theoryBlocks,
   beltFilters,
@@ -55,16 +53,6 @@ export const TheoryStudy = () => {
 
   return (
     <section className="flex flex-col gap-6 pt-4 pb-8">
-      <div className="flex items-center gap-4">
-        <Link
-          to="/theory"
-          className="flex items-center gap-2 text-primary-500 hover:underline"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Volver
-        </Link>
-      </div>
-
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-bold">Estudiar Teoría</h1>
         <p className="text-gray-600">
