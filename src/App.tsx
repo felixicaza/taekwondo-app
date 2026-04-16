@@ -3,8 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Exams } from './pages/Exams';
 import { Login } from './pages/Login';
 import { Tules } from './pages/Tules';
-import { Theory } from './pages/Theory';
-import { TheoryStudy } from './pages/TheoryStudy';
+import { Theory, TheoryLearnKorean } from './pages/Theory';
 import { Account, AccountEdit, AccountMenu } from './pages/Account';
 import { MainLayout } from './pages/MainLayout';
 import { InstallPWA } from './components/InstallPWA';
@@ -14,6 +13,7 @@ import { ExamDetail } from './pages/ExamDetail';
 import { ProgressProvider } from './context/ProgressContext';
 import { CalendarPage } from './pages/CalendarPage';
 import { AuthProvider } from './context/AuthContext';
+import { TheoryBlock } from './pages/TheoryBlock';
 
 function App() {
   const [isLogged, setIsLogged] = useState(() => {
@@ -47,8 +47,11 @@ function App() {
                 <Route path=":tulId" element={<TulManagement />} />
                 <Route path=":tulId/video" element={<TulVideo />} />
               </Route>
-              <Route path="/theory" element={<Theory />} />
-              <Route path="/theory/study" element={<TheoryStudy />} />
+              <Route path="/theory">
+                <Route index element={<Theory />} />
+                <Route path="block/:id" element={<TheoryBlock />} />
+                <Route path="learn-korean" element={<TheoryLearnKorean />} />
+              </Route>
               <Route path="/account" element={<Account />}>
                 <Route index element={<AccountMenu />} />
                 <Route path="edit" element={<AccountEdit />} />
