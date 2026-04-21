@@ -7,12 +7,25 @@ export type TheoryBlock = {
   content: string;
 };
 
-export const beltFilters: { id: BeltRange; label: string; colors: string[] }[] = [
-  { id: 'all', label: 'Todos', colors: ['bg-gray-500'] },
-  { id: 'white-yellow', label: 'Blanco - Amarillo', colors: ['bg-gray-300', 'bg-yellow-400'] },
-  { id: 'green-blue', label: 'Verde - Azul', colors: ['bg-green-500', 'bg-blue-500'] },
-  { id: 'red-black', label: 'Rojo - Negro', colors: ['bg-red-500', 'bg-gray-900'] },
-];
+export const beltFilters: { id: BeltRange; label: string; colors: string[] }[] =
+  [
+    { id: 'all', label: 'Todos', colors: ['bg-gray-500'] },
+    {
+      id: 'white-yellow',
+      label: 'Blanco - Amarillo',
+      colors: ['bg-gray-300', 'bg-yellow-400'],
+    },
+    {
+      id: 'green-blue',
+      label: 'Verde - Azul',
+      colors: ['bg-green-500', 'bg-blue-500'],
+    },
+    {
+      id: 'red-black',
+      label: 'Rojo - Negro',
+      colors: ['bg-red-500', 'bg-gray-900'],
+    },
+  ];
 
 export const theoryBlocks: TheoryBlock[] = [
   {

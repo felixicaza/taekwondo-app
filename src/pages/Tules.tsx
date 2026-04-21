@@ -24,13 +24,16 @@ export const Tules = () => {
 
   return (
     <section className="flex flex-col gap-4 pt-4">
-
       <div className="flex flex-col gap-2">
         <h1 className="text-xl">Selecciona tu tul</h1>
-        
+
         {/* Buscador */}
         <div className="relative">
-          <Search width={16} height={16} className="absolute text-gray-400 -translate-y-1/2 left-3 top-1/2" />
+          <Search
+            width={16}
+            height={16}
+            className="absolute text-gray-400 -translate-y-1/2 left-3 top-1/2"
+          />
           <input
             type="text"
             placeholder="Buscar por nombre, coreano, movimientos..."
@@ -40,7 +43,7 @@ export const Tules = () => {
           />
           {searchQuery && (
             <button
-              type='button'
+              type="button"
               onClick={() => setSearchQuery('')}
               className="absolute text-gray-400 -translate-y-1/2 right-3 top-1/2 hover:text-gray-600"
               aria-label="Limpiar búsqueda"
@@ -53,7 +56,8 @@ export const Tules = () => {
         {/* Contador de resultados */}
         {searchQuery && (
           <p className="text-sm text-gray-500">
-            {filteredTuls.length} {filteredTuls.length === 1 ? 'tul encontrado' : 'tules encontrados'}
+            {filteredTuls.length}{' '}
+            {filteredTuls.length === 1 ? 'tul encontrado' : 'tules encontrados'}
           </p>
         )}
       </div>
