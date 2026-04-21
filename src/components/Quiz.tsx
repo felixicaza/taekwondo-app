@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ArrowLeft, Check, X, RotateCcw } from 'lucide-react';
-import { VocabularyItem } from '../consts/vocabulary';
+import type { VocabularyItem } from '../consts/vocabulary';
 
 type QuizProps = {
   items: VocabularyItem[];
