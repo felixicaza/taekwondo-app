@@ -51,9 +51,7 @@ export const AuthProvider = ({ children, onLogout }: AuthProviderProps) => {
     return saved ? JSON.parse(saved) : DEFAULT_PROFILE_DATA;
   });
 
-  const setProfileData: Dispatch<SetStateAction<Profile>> = (
-    action
-  ) => {
+  const setProfileData: Dispatch<SetStateAction<Profile>> = (action) => {
     setProfileDataState((prev) => {
       const next =
         typeof action === 'function'
