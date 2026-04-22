@@ -127,7 +127,7 @@ export function AccountEdit() {
         <Button
           variant="outline"
           className="flex-1 text-black"
-          onClick={() => window.history.back()}
+          onClick={() => router.history.back()}
         >
           Cancelar
         </Button>
